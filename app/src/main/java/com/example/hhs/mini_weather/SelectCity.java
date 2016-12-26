@@ -67,6 +67,7 @@ public class SelectCity extends Activity implements View.OnClickListener {
         dataCity = new ArrayList<String>();
         dataCode = new ArrayList<String>();
         xianshi = new ArrayList<String>();
+        mData = new ArrayList<String>();
         myApplication= (MyApplication)getApplication();
         cityList=myApplication.getCityList();
 
@@ -108,10 +109,10 @@ public class SelectCity extends Activity implements View.OnClickListener {
                 selectct_tv.setText("你选择了："+mData.get(i).substring(10));
 
 
-               /*Intent intent=new Intent();
+               Intent intent=new Intent();
                 intent.putExtra("cityCode",selectcode);
                 setResult(RESULT_OK,intent);
-                finish();*/
+                finish();
             }
         });
         Log.d("info",cityList.get(0).getNumber());
