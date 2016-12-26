@@ -226,7 +226,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="center">
+            android:gravity="center"
+            android:layout_marginTop="25dp">
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -238,11 +239,10 @@
                     android:id="@+id/week_today1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
                     android:singleLine="true"
                     android:text="星期四"
                     android:textColor="@android:color/white"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:layout_gravity="center"/>                <!-- 温度范围 -->
                 <ImageView
                     android:id="@+id/weather_img1"
@@ -259,7 +259,7 @@
                     android:singleLine="true"
                     android:text="-2℃~7℃"
                     android:textColor="@android:color/white"
-                    android:textSize="30.0sp"
+                    android:textSize="20.0sp"
                     android:layout_gravity="center"/>                <!-- 天气状况 -->
                 <TextView
                     android:id="@+id/climate1"
@@ -269,7 +269,7 @@
                     android:singleLine="true"
                     android:text="多云转晴"
                     android:textColor="@android:color/white"
-                    android:textSize="20.0sp"
+                    android:textSize="15.0sp"
                     android:layout_gravity="center"/>                <!-- 风力信息 -->
                 <TextView
                     android:id="@+id/wind1"
@@ -279,7 +279,7 @@
                     android:singleLine="true"
                     android:text="微风"
                     android:textColor="@android:color/white"
-                    android:textSize="20.0sp"
+                    android:textSize="15.0sp"
                     android:layout_gravity="center"/>
             </LinearLayout>
             <LinearLayout
@@ -292,11 +292,10 @@
                     android:id="@+id/week_today2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
                     android:singleLine="true"
                     android:text="星期五"
                     android:textColor="@android:color/white"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:layout_gravity="center"/>                <!-- 温度范围 -->
                 <ImageView
                     android:id="@+id/weather_img2"
@@ -313,7 +312,7 @@
                     android:singleLine="true"
                     android:text="-2℃~7℃"
                     android:textColor="@android:color/white"
-                    android:textSize="30.0sp"
+                    android:textSize="20.0sp"
                     android:layout_gravity="center"/>                <!-- 天气状况 -->
                 <TextView
                     android:id="@+id/climate2"
@@ -323,7 +322,7 @@
                     android:singleLine="true"
                     android:text="多云转晴"
                     android:textColor="@android:color/white"
-                    android:textSize="20.0sp"
+                    android:textSize="15.0sp"
                     android:layout_gravity="center"/>                <!-- 风力信息 -->
                 <TextView
                     android:id="@+id/wind2"
@@ -333,7 +332,7 @@
                     android:singleLine="true"
                     android:text="微风"
                     android:textColor="@android:color/white"
-                    android:textSize="20.0sp"
+                    android:textSize="15.0sp"
                     android:layout_gravity="center"/>
             </LinearLayout>
             <LinearLayout
@@ -349,7 +348,7 @@
                     android:singleLine="true"
                     android:text="星期六"
                     android:textColor="@android:color/white"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:layout_gravity="center"/>                <!-- 温度范围 -->
                 <ImageView
                     android:id="@+id/weather_img3"
@@ -366,7 +365,7 @@
                     android:singleLine="true"
                     android:text="-2℃~7℃"
                     android:textColor="@android:color/white"
-                    android:textSize="30.0sp"
+                    android:textSize="20.0sp"
                     android:layout_gravity="center"/>                <!-- 天气状况 -->
                 <TextView
                     android:id="@+id/climate3"
@@ -376,7 +375,7 @@
                     android:singleLine="true"
                     android:text="多云转晴"
                     android:textColor="@android:color/white"
-                    android:textSize="20.0sp"
+                    android:textSize="15.0sp"
                     android:layout_gravity="center"/>                <!-- 风力信息 -->
                 <TextView
                     android:id="@+id/wind3"
@@ -386,7 +385,7 @@
                     android:singleLine="true"
                     android:text="微风"
                     android:textColor="@android:color/white"
-                    android:textSize="20.0sp"
+                    android:textSize="15.0sp"
                     android:layout_gravity="center"/>
             </LinearLayout>
 
