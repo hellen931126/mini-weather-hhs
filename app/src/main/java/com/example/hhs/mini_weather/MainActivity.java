@@ -94,6 +94,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         windTv = (TextView) findViewById(R.id.wind);
         weatherImg = (ImageView) findViewById(R.id.weather_img);
 
+
         weekTv1 = (TextView) findViewById(R.id.week_today1);
         temperatureTv1 = (TextView) findViewById(R.id.temperature1);
         climateTv1 = (TextView) findViewById(R.id.climate1);
@@ -425,6 +426,29 @@ public class MainActivity extends Activity implements View.OnClickListener {
         temperatureTv.setText(todayWeather.getHigh() + "~" + todayWeather.getLow());
         climateTv.setText(todayWeather.getType());
         windTv.setText("风力:" + todayWeather.getFengli());
+
+        switch (todayWeather.getQuality()){
+            case "优":
+                pmImg.setImageResource(R.drawable.biz_plugin_weather_0_50);
+                break;
+            case "良":
+                pmImg.setImageResource(R.drawable.biz_plugin_weather_51_100);
+                break;
+            case "轻度污染":
+                pmImg.setImageResource(R.drawable.biz_plugin_weather_101_150);
+                break;
+            case "中度污染":
+                pmImg.setImageResource(R.drawable.biz_plugin_weather_151_200);
+                break;
+            case "重度污染":
+                pmImg.setImageResource(R.drawable.biz_plugin_weather_201_300);
+                break;
+            case "严重污染":
+                pmImg.setImageResource(R.drawable.biz_plugin_weather_greater_300);
+                break;
+            default:
+                break;
+        }
 
 
 
