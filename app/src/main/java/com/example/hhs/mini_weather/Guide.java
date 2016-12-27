@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -52,12 +53,27 @@ public class Guide extends Activity implements ViewPager.OnPageChangeListener{
     }
 
     private void initViews(){
-        LayoutInflater inflater=LayoutInflater.from(this);
-        views = new ArrayList<View>();
-        views.add(inflater.inflate(R.layout.page1,null));
-        views.add(inflater.inflate(R.layout.page2,null));
-        views.add(inflater.inflate(R.layout.page3,null));
 
+        views = new ArrayList<View>();
+
+        ImageView imageView = new ImageView(this);
+        imageView.setImageResource(R.drawable.background1);
+        imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+        imageView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        views.add(imageView);
+
+        ImageView imageView1 = new ImageView(this);
+        imageView1.setImageResource(R.drawable.background2);
+        imageView1.setScaleType(ImageView.ScaleType.FIT_XY);
+        imageView1.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        views.add(imageView1);
+
+        LayoutInflater inflater=LayoutInflater.from(this);
+//        views = new ArrayList<View>();
+//        views.add(inflater.inflate(R.layout.page1,null));
+//        views.add(inflater.inflate(R.layout.page2,null));
+       views.add(inflater.inflate(R.layout.page3,null));
+//
         vpAdapter = new ViewPagerAdapter(views,this);
         vp = (ViewPager) findViewById(R.id.viewpager);
         vp.setAdapter(vpAdapter);

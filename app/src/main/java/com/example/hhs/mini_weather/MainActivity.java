@@ -39,10 +39,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private ImageView mUpdateBtn;
     private ImageView mCitySelect;
     private TextView cityTv, timeTv, humidityTv, weekTv, pmDataTv, pmQualityTv, temperatureTv, climateTv, windTv, city_name_Tv;
-    private TextView weekTv1,temperatureTv1,climateTv1,windTv1;
-    private TextView weekTv2,temperatureTv2,climateTv2,windTv2;
-    private TextView weekTv3,temperatureTv3,climateTv3,windTv3;
-    private ImageView weatherImg, weatherImg1,weatherImg2,weatherImg3,pmImg;
+    private TextView weekTv1, temperatureTv1, climateTv1, windTv1;
+    private TextView weekTv2, temperatureTv2, climateTv2, windTv2;
+    private TextView weekTv3, temperatureTv3, climateTv3, windTv3;
+    private ImageView weatherImg, weatherImg1, weatherImg2, weatherImg3, pmImg;
 
     private Handler mHandler = new Handler() {
         public void handleMessage(android.os.Message msg) {
@@ -171,10 +171,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
         if (requestCode == 1 && resultCode == RESULT_OK) {
             String newCityCode = data.getStringExtra("cityCode");
             Log.d("myWeather", "选择的城市代码为" + newCityCode);
-            if (NetUtil.getNetworkState(this) != NetUtil.NETWORN_NONE){
+            if (NetUtil.getNetworkState(this) != NetUtil.NETWORN_NONE) {
                 Log.d("myWeather", "网络OK");
                 queryWeatherCode(newCityCode);
-            }else{
+            } else {
                 Log.d("myWeather", "网络挂了");
                 Toast.makeText(MainActivity.this, "网络挂了！", Toast.LENGTH_LONG).show();
             }
@@ -277,124 +277,95 @@ public class MainActivity extends Activity implements View.OnClickListener {
                                 eventType = xmlPullParser.next();
                                 todayWeather.setFengxiang(xmlPullParser.getText());
                                 fengxiangCount++;
-                            }
-                            else if (xmlPullParser.getName().equals("fengxiang") && fengxiangCount == 1) {
+                            } else if (xmlPullParser.getName().equals("fengxiang") && fengxiangCount == 1) {
                                 eventType = xmlPullParser.next();
                                 todayWeather.setFengxiang1(xmlPullParser.getText());
                                 fengxiangCount++;
-                            }
-                            else if (xmlPullParser.getName().equals("fengxiang") && fengxiangCount == 2) {
+                            } else if (xmlPullParser.getName().equals("fengxiang") && fengxiangCount == 2) {
                                 eventType = xmlPullParser.next();
                                 todayWeather.setFengxiang2(xmlPullParser.getText());
                                 fengxiangCount++;
-                            }
-                            else if (xmlPullParser.getName().equals("fengxiang") && fengxiangCount == 3) {
+                            } else if (xmlPullParser.getName().equals("fengxiang") && fengxiangCount == 3) {
                                 eventType = xmlPullParser.next();
                                 todayWeather.setFengxiang3(xmlPullParser.getText());
                                 fengxiangCount++;
-                            }
-                            else if (xmlPullParser.getName().equals("fengli") && fengliCount == 0) {
+                            } else if (xmlPullParser.getName().equals("fengli") && fengliCount == 0) {
                                 eventType = xmlPullParser.next();
                                 todayWeather.setFengli(xmlPullParser.getText());
                                 fengliCount++;
-                            }
-                            else if (xmlPullParser.getName().equals("fengli") && fengliCount == 1) {
+                            } else if (xmlPullParser.getName().equals("fengli") && fengliCount == 1) {
                                 eventType = xmlPullParser.next();
                                 todayWeather.setFengli1(xmlPullParser.getText());
                                 fengliCount++;
-                            }
-                            else if (xmlPullParser.getName().equals("fengli") && fengliCount == 2) {
+                            } else if (xmlPullParser.getName().equals("fengli") && fengliCount == 2) {
                                 eventType = xmlPullParser.next();
                                 todayWeather.setFengli2(xmlPullParser.getText());
                                 fengliCount++;
-                            }
-                            else if (xmlPullParser.getName().equals("fengli") && fengliCount == 3) {
+                            } else if (xmlPullParser.getName().equals("fengli") && fengliCount == 3) {
                                 eventType = xmlPullParser.next();
                                 todayWeather.setFengli3(xmlPullParser.getText());
                                 fengliCount++;
-                            }
-                            else if (xmlPullParser.getName().equals("date") && dateCount == 0 ) {
+                            } else if (xmlPullParser.getName().equals("date") && dateCount == 0) {
                                 eventType = xmlPullParser.next();
                                 todayWeather.setDate(xmlPullParser.getText());
                                 dateCount++;
-                            }
-                            else if (xmlPullParser.getName().equals("date") && dateCount == 1 ) {
+                            } else if (xmlPullParser.getName().equals("date") && dateCount == 1) {
                                 eventType = xmlPullParser.next();
                                 todayWeather.setDate1(xmlPullParser.getText());
                                 dateCount++;
-                            }
-
-                            else if (xmlPullParser.getName().equals("date") && dateCount == 2 ) {
+                            } else if (xmlPullParser.getName().equals("date") && dateCount == 2) {
                                 eventType = xmlPullParser.next();
                                 todayWeather.setDate2(xmlPullParser.getText());
                                 dateCount++;
-                            }
-
-                            else if (xmlPullParser.getName().equals("date") && dateCount == 3 ) {
+                            } else if (xmlPullParser.getName().equals("date") && dateCount == 3) {
                                 eventType = xmlPullParser.next();
                                 todayWeather.setDate3(xmlPullParser.getText());
                                 dateCount++;
-                            }
-                            else if (xmlPullParser.getName().equals("high") && highCount == 0) {
+                            } else if (xmlPullParser.getName().equals("high") && highCount == 0) {
                                 eventType = xmlPullParser.next();
                                 todayWeather.setHigh(xmlPullParser.getText().substring(2).trim());
                                 highCount++;
-                            }
-                            else if (xmlPullParser.getName().equals("high") && highCount == 1) {
+                            } else if (xmlPullParser.getName().equals("high") && highCount == 1) {
                                 eventType = xmlPullParser.next();
                                 todayWeather.setHigh1(xmlPullParser.getText().substring(2).trim());
                                 highCount++;
-                            }
-
-                            else if (xmlPullParser.getName().equals("high") && highCount == 2) {
+                            } else if (xmlPullParser.getName().equals("high") && highCount == 2) {
                                 eventType = xmlPullParser.next();
                                 todayWeather.setHigh2(xmlPullParser.getText().substring(2).trim());
                                 highCount++;
-                            }
-
-                            else if (xmlPullParser.getName().equals("high") && highCount == 3) {
+                            } else if (xmlPullParser.getName().equals("high") && highCount == 3) {
                                 eventType = xmlPullParser.next();
                                 todayWeather.setHigh3(xmlPullParser.getText().substring(2).trim());
                                 highCount++;
-                            }
-                            else if (xmlPullParser.getName().equals("low") && lowCount == 0) {
+                            } else if (xmlPullParser.getName().equals("low") && lowCount == 0) {
                                 eventType = xmlPullParser.next();
                                 todayWeather.setLow(xmlPullParser.getText().substring(2).trim());
                                 lowCount++;
-                            }
-                            else if (xmlPullParser.getName().equals("low") && lowCount == 1) {
+                            } else if (xmlPullParser.getName().equals("low") && lowCount == 1) {
                                 eventType = xmlPullParser.next();
                                 todayWeather.setLow1(xmlPullParser.getText().substring(2).trim());
                                 lowCount++;
-                            }
-
-                            else if (xmlPullParser.getName().equals("low") && lowCount == 2) {
+                            } else if (xmlPullParser.getName().equals("low") && lowCount == 2) {
                                 eventType = xmlPullParser.next();
                                 todayWeather.setLow2(xmlPullParser.getText().substring(2).trim());
                                 lowCount++;
-                            }
-
-                            else if (xmlPullParser.getName().equals("low") && lowCount == 3) {
+                            } else if (xmlPullParser.getName().equals("low") && lowCount == 3) {
                                 eventType = xmlPullParser.next();
                                 todayWeather.setLow3(xmlPullParser.getText().substring(2).trim());
                                 lowCount++;
-                            }
-                            else if (xmlPullParser.getName().equals("type") && typeCount == 0) {
+                            } else if (xmlPullParser.getName().equals("type") && typeCount == 0) {
                                 eventType = xmlPullParser.next();
                                 todayWeather.setType(xmlPullParser.getText());
                                 typeCount++;
-                            }
-                            else if (xmlPullParser.getName().equals("type") && typeCount == 1) {
+                            } else if (xmlPullParser.getName().equals("type") && typeCount == 1) {
                                 eventType = xmlPullParser.next();
                                 todayWeather.setType1(xmlPullParser.getText());
                                 typeCount++;
-                            }
-                            else if (xmlPullParser.getName().equals("type") && typeCount == 2) {
+                            } else if (xmlPullParser.getName().equals("type") && typeCount == 2) {
                                 eventType = xmlPullParser.next();
                                 todayWeather.setType2(xmlPullParser.getText());
                                 typeCount++;
-                            }
-                            else if (xmlPullParser.getName().equals("type") && typeCount == 3) {
+                            } else if (xmlPullParser.getName().equals("type") && typeCount == 3) {
                                 eventType = xmlPullParser.next();
                                 todayWeather.setType3(xmlPullParser.getText());
                                 typeCount++;
@@ -427,32 +398,33 @@ public class MainActivity extends Activity implements View.OnClickListener {
         climateTv.setText(todayWeather.getType());
         windTv.setText("风力:" + todayWeather.getFengli());
 
-        switch (todayWeather.getQuality()){
-            case "优":
-                pmImg.setImageResource(R.drawable.biz_plugin_weather_0_50);
-                break;
-            case "良":
-                pmImg.setImageResource(R.drawable.biz_plugin_weather_51_100);
-                break;
-            case "轻度污染":
-                pmImg.setImageResource(R.drawable.biz_plugin_weather_101_150);
-                break;
-            case "中度污染":
-                pmImg.setImageResource(R.drawable.biz_plugin_weather_151_200);
-                break;
-            case "重度污染":
-                pmImg.setImageResource(R.drawable.biz_plugin_weather_201_300);
-                break;
-            case "严重污染":
-                pmImg.setImageResource(R.drawable.biz_plugin_weather_greater_300);
-                break;
-            default:
-                break;
+        if (todayWeather.getQuality() != null) {
+            switch (todayWeather.getQuality()) {
+                case "优":
+                    pmImg.setImageResource(R.drawable.biz_plugin_weather_0_50);
+                    break;
+                case "良":
+                    pmImg.setImageResource(R.drawable.biz_plugin_weather_51_100);
+                    break;
+                case "轻度污染":
+                    pmImg.setImageResource(R.drawable.biz_plugin_weather_101_150);
+                    break;
+                case "中度污染":
+                    pmImg.setImageResource(R.drawable.biz_plugin_weather_151_200);
+                    break;
+                case "重度污染":
+                    pmImg.setImageResource(R.drawable.biz_plugin_weather_201_300);
+                    break;
+                case "严重污染":
+                    pmImg.setImageResource(R.drawable.biz_plugin_weather_greater_300);
+                    break;
+                default:
+                    break;
+            }
         }
 
 
-
-        switch (todayWeather.getType()){
+        switch (todayWeather.getType()) {
             case "暴雪":
                 weatherImg.setImageResource(R.drawable.biz_plugin_weather_baoxue);
                 break;
@@ -523,7 +495,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         climateTv1.setText(todayWeather.getType1());
         windTv1.setText("风力:" + todayWeather.getFengli1());
 
-        switch (todayWeather.getType1()){
+        switch (todayWeather.getType1()) {
             case "暴雪":
                 weatherImg1.setImageResource(R.drawable.biz_plugin_weather_baoxue);
                 break;
@@ -593,7 +565,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         climateTv2.setText(todayWeather.getType2());
         windTv2.setText("风力:" + todayWeather.getFengli2());
 
-        switch (todayWeather.getType2()){
+        switch (todayWeather.getType2()) {
             case "暴雪":
                 weatherImg2.setImageResource(R.drawable.biz_plugin_weather_baoxue);
                 break;
@@ -664,7 +636,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         climateTv3.setText(todayWeather.getType3());
         windTv3.setText("风力:" + todayWeather.getFengli3());
 
-        switch (todayWeather.getType3()){
+        switch (todayWeather.getType3()) {
             case "暴雪":
                 weatherImg3.setImageResource(R.drawable.biz_plugin_weather_baoxue);
                 break;
